@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Fuse : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class Fuse : MonoBehaviour
 
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
         TimeOut = 0;
+        SceneManager.LoadScene("SampleScene");
     }
 
     private void Update()

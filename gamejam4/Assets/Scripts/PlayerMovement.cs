@@ -7,14 +7,12 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public float moveSpeed = 5f;
-    public Rigidbody2D rb;
+    public float speed = 1f;
+    public Rigidbody2D rb2d;
     public Animator animator;
 
     Vector2 movement;
 
-
-    // Update is called once per frame
     void Update()
     {
         //Input
@@ -27,16 +25,21 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             print("space key was pressed");
-            SceneManager.LoadScene("puzzle2");
+            SceneManager.LoadScene("Puzzle01");
         }
 
+    }
+
+    void Start()
+    {
+        //Get and store a reference to the Rigidbody2D component so that we can access it.
+        rb2d = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
     {
         // Movement
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb2d.MovePosition(rb2d.position + movement * speed * Time.fixedDeltaTime);
 
     }
 }
-

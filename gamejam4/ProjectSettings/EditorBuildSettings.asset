@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Inicio.unity
+    guid: dd54104e78477e74cbfc91b3338e3007
+  - enabled: 1
+    path: Assets/Scenes/HistoriaMovie.unity
+    guid: db9466a39d920b34c8d97018aecfd6ff
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Puzzle01.unity
+    guid: 5b778fa37d8a0fc4b9f1ee63bb65f876
   m_configObjects: {}
