@@ -6,6 +6,11 @@ using UnityEngine.EventSystems;
 public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     Vector3 originalPos;
+    public GameObject target = default;
+    bool IsCollidingWithTarget = false;
+
+
+
     #region DragFunctions
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -22,8 +27,33 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     public void OnEndDrag(PointerEventData eventData)
     {
         Debug.Log("OnEndDrag");
-        transform.position = originalPos;
+        if (IsCollidingWithTarget)
+        {
+            transform.position = target.transform.position;
+        }
+        else
+        {
+            transform.position = originalPos;
+        }
     }
+
+    void OnTriggerStay2D(Collider2D collider)
+    {
+        if (target == collider.gameObject)
+        {
+            IsCollidingWithTarget = true;
+        }
+        print(IsCollidingWithTarget);
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if (target == collider.gameObject)
+        {
+            IsCollidingWithTarget = false;
+        }
+    }
+
 
     #endregion
 
