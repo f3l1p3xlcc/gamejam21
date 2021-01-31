@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
@@ -32,6 +33,7 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
             transform.position = target.transform.position;
             print(GameObject.FindWithTag("FUSE"));
             Destroy(GameObject.FindWithTag("FUSE"));
+            SceneManager.LoadScene("SampleScene");
         }
         else
         {
