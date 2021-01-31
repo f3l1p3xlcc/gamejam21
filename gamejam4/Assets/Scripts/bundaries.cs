@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class bundaries : MonoBehaviour
 {
-    pribate Vector2 screenBounds;
+    private Vector2 screenBounds;
     // Start is called before the first frame update
     void Start()
     {
-        screenBounds = new Vector3(800,600,0)
+        screenBounds = new Vector3(800, 600, 0);
         
     }
 
     // Update is called once per frame
-    void LateUpdate()
-    {
+   // void LateUpdate()
+   // {
         //Vector3 viewPos = transform.position;
         //viewPos.x =
-    }
+   // }
 }
