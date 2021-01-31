@@ -8,7 +8,7 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     Vector3 originalPos;
     public GameObject target = default;
     bool IsCollidingWithTarget = false;
-
+    public GameObject FUSE;
 
 
     #region DragFunctions
@@ -30,6 +30,8 @@ public class Drag : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         if (IsCollidingWithTarget)
         {
             transform.position = target.transform.position;
+            print(GameObject.FindWithTag("FUSE"));
+            Destroy(GameObject.FindWithTag("FUSE"));
         }
         else
         {
